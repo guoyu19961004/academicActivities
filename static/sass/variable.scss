@@ -1,0 +1,17 @@
+/* Welcome to Compass. Use this file to define print styles.
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+$wrap-width:960px;
+$page-width:450px;
+$logo-width:200px;
+@mixin content-chapter-animation($index:1){
+    $move-distance:-$index*71px;
+    @include transform(translate(0px,$move-distance));
+    @include opacity(0);
+}
+@mixin left-calc($attr){
+    $webkit-calc:unquote('-webkit-calc('+$attr +')');
+    left:unquote('-webkit-calc('+$attr +')');
+    left:unquote('-moz-calc('+$attr +')');
+    left:unquote('clac('+$attr +')');
+}
